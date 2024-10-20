@@ -2,7 +2,7 @@
 # React Image Gallery
 
 A simple and responsive image gallery built with React. The gallery displays images in a grid layout with three columns, and it includes a lightbox feature for viewing larger versions of the images. Users can navigate between images using next and previous buttons or keyboard arrows.
-Demo: [https://bedab-task.vercel.app/](Live Demo)
+Demo: [Live Demo](https://bedab-task.vercel.app/)
 
 ## Table of Contents
 - [Features](#features)
