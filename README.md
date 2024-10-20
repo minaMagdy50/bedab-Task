@@ -1,70 +1,102 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Image Gallery
 
-## Available Scripts
+A simple and responsive image gallery built with React. The gallery displays images in a grid layout with three columns, and it includes a lightbox feature for viewing larger versions of the images. Users can navigate between images using next and previous buttons or keyboard arrows.
 
-In the project directory, you can run:
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
+- **Responsive layout**: The gallery adjusts automatically to different screen sizes.
+- **Lightbox**: Users can click an image to open a larger version in a lightbox.
+- **Navigation**: Users can navigate through the images using next/prev buttons or the keyboard (left/right arrow keys).
+- **Lazy loading**: Images are lazily loaded for better performance.
+- **CSS animations**: Subtle image hover effects and lightbox animations for a smooth user experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/react-image-gallery.git
+   ```
 
-### `npm test`
+2. Navigate to the project directory:
+   ```bash
+   cd react-image-gallery
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will be available at `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To add or modify the gallery images:
 
-### `npm run eject`
+1. Place your image files in the `src/assets/gallery` directory.
+2. Import the images at the top of the `ImageGallery.js` file:
+   ```javascript
+   import image1 from "../assets/gallery/your-image-1.jpg";
+   import image2 from "../assets/gallery/your-image-2.jpg";
+   // Add or remove images as needed
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Update the `images` array in the `ImageGallery` component:
+   ```javascript
+   const images = [
+     image1,
+     image2,
+     // Add or rearrange your images
+   ];
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Change Number of Columns
+You can easily change the number of columns in the gallery by modifying the `getColumns` function:
+```javascript
+const columns = getColumns(images, 3);  // Change 3 to the desired number of columns
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Modify Lightbox Styles
+You can customize the lightbox and gallery appearance by editing the provided CSS styles in the `ImageGallery.css` file. For example, to change the lightbox background color, update the `.lightbox` class:
+```css
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.9);  // Adjust the opacity or color
+}
+```
 
-## Learn More
+### Keyboard Navigation
+The lightbox supports keyboard navigation (arrow keys for next/prev and escape key to close). To disable or modify this behavior, update the `handleKeyDown` function:
+```javascript
+const handleKeyDown = (e) => {
+  if (e.key === "Escape") {
+    closeLightbox();
+  } else if (e.key === "ArrowRight") {
+    handleNext(e);
+  } else if (e.key === "ArrowLeft") {
+    handlePrev(e);
+  }
+};
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are welcome! Feel free to open a pull request or submit issues on GitHub if you find bugs or have suggestions for new features.
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
