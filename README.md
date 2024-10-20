@@ -22,7 +22,7 @@ A simple and responsive image gallery built with React. The gallery displays ima
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/react-image-gallery.git](https://github.com/minaMagdy50/bedab-Task.git)
+   git clone https://github.com/yourusername/react-image-gallery.git
    ```
 
 2. Navigate to the project directory:
