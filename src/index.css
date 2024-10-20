@@ -1,20 +1,10 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
 .thumbnail {
   cursor: pointer;
   transition: transform 0.2s;
   overflow: hidden !important;
 }
 
-.thumbnail:hover  img{
+.thumbnail:hover img {
   transform: scale(1.05);
 }
 
@@ -56,7 +46,8 @@
   cursor: pointer;
 }
 
-.prev, .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
   font-size: 40px;
@@ -75,22 +66,38 @@
   right: 20px;
 }
 
-
-.gallery-container{
+.gallery-container {
   width: 85%;
   margin: auto;
 }
-.photogallery{
+
+.photogallery {
   display: flex;
+  flex-wrap: wrap; 
   gap: 20px;
 }
-.column{
+
+.column {
+  flex: 1 1 calc(33.33% - 20px); 
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.gallery-container img{
-width: 100%;
-border: solid 2px white;
-transition: transform 0.5s;
+
+.gallery-container img {
+  width: 100%;
+  border: solid 2px white;
+  transition: transform 0.5s;
+}
+
+@media (max-width: 900px) {
+  .column {
+    flex: 1 1 calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 600px) {
+  .column {
+    flex: 1 1 100%;
+  }
 }
