@@ -2,6 +2,7 @@
 # React Image Gallery
 
 A simple and responsive image gallery built with React. The gallery displays images in a grid layout with three columns, and it includes a lightbox feature for viewing larger versions of the images. Users can navigate between images using next and previous buttons or keyboard arrows.
+Demo: [https://bedab-task.vercel.app/](Live Demo)
 
 ## Table of Contents
 - [Features](#features)
@@ -22,7 +23,7 @@ A simple and responsive image gallery built with React. The gallery displays ima
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/react-image-gallery.git
+   git clone https://github.com/minaMagdy50/bedab-Task.git
    ```
 
 2. Navigate to the project directory:
